@@ -25,6 +25,7 @@ async function init() {
   const data = await d3.json("data/data_sankey.json");
   // Applies it to the data. We make a copy of the nodes and links objects
   // so as to avoid mutating the original.
+  // dont chang ebelow this for now, change data to something else because this will change to something you can anticipate.
   const { nodes, links } = sankey({
   // const tmp = sankey({
     nodes: data.nodes.map(d => Object.assign({}, d)),
