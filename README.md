@@ -25,7 +25,7 @@ Note: this not about using 3p code in your own app (final project)
         1. fetches some json data from `data/data_sankey.json`
             * take a look at this file: 
                 1. what javascript data structures are used in this file?
-                1. what general data structure (for those of you have taken Dat Structures) might best represent the data that is in this file?
+                1. what general data structure (for those of you have taken Data Structures) might best represent the data that is in this file?
         1. uses the `d3-sankey` library to create a sankey diagram
 
 ## Make a Sankey using our own data
