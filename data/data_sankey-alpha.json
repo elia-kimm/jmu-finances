@@ -1,0 +1,71 @@
+{
+  "nodes": [
+    {
+      "name": "a",
+      "value": "Value: 0",
+      "title": "Node 0",
+      "category":0
+    },
+    {
+      "name": "b",
+      "value": "Value: 1",
+      "title": "Node 1",
+      "category":1
+    },
+    {
+      "name": "c",
+      "value": "Value: 2",
+      "title": "Node 2",
+      "category":2
+    },
+    {
+      "name": "d",
+      "value": "Value: 3",
+      "title": "Node 3",
+      "category":3
+    },
+    {
+      "name": "e",
+      "value": "Value: 4",
+      "title": "Node 4",
+      "category":4
+    }
+  ],
+  "links": [
+    {
+      "source": "a",
+      "target": "c",
+      "value": 2
+    },
+    {
+      "source": "b",
+      "target": "c",
+      "value": 2
+    },
+    {
+      "source": "b",
+      "target": "d",
+      "value": 2
+    },
+    {
+      "source": "a",
+      "target": "e",
+      "value": 2
+    },
+    {
+      "source": "c",
+      "target": "d",
+      "value": 2
+    },
+    {
+      "source": "c",
+      "target": "e",
+      "value": 2
+    },
+    {
+      "source": "d",
+      "target": "e",
+      "value": 4
+    }
+  ]
+}

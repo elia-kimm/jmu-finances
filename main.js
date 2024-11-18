@@ -21,13 +21,14 @@ const sankey = d3Sankey.sankey()
   .nodePadding(10)
   .extent([[1, 5], [width - 1, height - 5]]);
 
+
 async function init() {
   const data = await d3.json("data/data_sankey.json");
   // Applies it to the data. We make a copy of the nodes and links objects
   // so as to avoid mutating the original.
   // dont chang ebelow this for now, change data to something else because this will change to something you can anticipate.
   const { nodes, links } = sankey({
-  // const tmp = sankey({
+    // const tmp = sankey({
     nodes: data.nodes.map(d => Object.assign({}, d)),
     links: data.links.map(d => Object.assign({}, d))
   });
@@ -55,7 +56,8 @@ async function init() {
   rect.append("title")
     .text(d => {
       console.log('d', d);
-      return `${d.name}\n${format(d.value)}`});
+      return `${d.name}\n${format(d.value)}`
+    });
 
   // Creates the paths that represent the links.
   const link = svg.append("g")
@@ -103,7 +105,7 @@ async function init() {
     .attr("text-anchor", d => d.x0 < width / 2 ? "start" : "end")
     .text(d => d.title);
 
-    // Adds labels on the links.
+  // Adds labels on the links.
   svg.append("g")
     .selectAll()
     .data(links)
@@ -122,7 +124,7 @@ async function init() {
     });
 
   const svgNode = svg.node();
-    document.body.appendChild(svgNode);
+  document.body.appendChild(svgNode);
   return svgNode;
 }
 
