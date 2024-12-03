@@ -77,25 +77,6 @@ function getLinks(jmuData, nodes) {
   return links;
 }
 
-function getExpenseNodes(data) {
-  // Generate nodes for expense categories and their items
-  const expenseNodes = [];
-  data.expenses.forEach(expenseCategory => {
-    expenseNodes.push({
-      name: expenseCategory.name,
-      title: expenseCategory.title || expenseCategory.name
-    });
-
-    expenseCategory.items.forEach(item => {
-      expenseNodes.push({
-        name: item.name,
-        title: item.title || item.name
-      });
-    });
-  });
-  return expenseNodes;
-}
-
 function getLinks(data, nodes) {
   const links = [];
 
@@ -123,16 +104,16 @@ function getLinks(data, nodes) {
 }
 
 async function init() {
-  const data = await d3.json("data/data_sankey.json");
+  //const data = await d3.json("data/data_sankey.json");
   const jmuData = await d3.json("data/jmu.json");
-  const newData = forDiagram3(jmuData);
+  const data = forDiagram3(jmuData);
   // Applies it to the data. We make a copy of the nodes and links objects
   // so as to avoid mutating the original.
   // dont chang ebelow this for now, change data to something else because this will change to something you can anticipate.
   const { nodes, links } = sankey({
     // const tmp = sankey({
-    nodes: data.nodes.map(d => Object.assign({}, d)),
-    links: data.links.map(d => Object.assign({}, d))
+    nodes: newData.nodes.map(d => Object.assign({}, d)),
+    links: newData.links.map(d => Object.assign({}, d))
   });
 
   // console.log('tmp', tmp);
