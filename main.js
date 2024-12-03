@@ -52,30 +52,6 @@ function getNodes(jmuData) {
   return nodes;
 }
 
-function getNodesForRevenues(jmuData) {
-  const nodes = [];
-
-  // 1. Get Revenue items (from "jmu-revenues")
-  jmuData["jmu-revenues"].forEach(rev => {
-    nodes.push({
-      name: rev.name,
-      title: rev.name,
-      category: "revenue-item"
-    });
-  });
-
-  // 2. Get Expense categories
-  ["Operating Expenses", "Non-operating Expenses"].forEach(cat => {
-    nodes.push({
-      name: cat,
-      title: cat,
-      category: "expense-category"
-    });
-  });
-
-  return nodes;
-}
-
 function getLinks(jmuData, nodes) {
   const links = [];
 
